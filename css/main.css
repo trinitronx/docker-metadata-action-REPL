@@ -1,0 +1,161 @@
+body {
+  background-color: #e6e7ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.topcontainer {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  align-content: space-between;
+  height: 100vh;
+  /* height: 100%; */
+  width: 95%;
+  /* align-content: center; */
+  /* justify-content: space-between; */
+  /* DEBUG */
+  /* border: 1rem solid magenta; */
+}
+
+.midcontainer {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  /* DEBUG */
+  /* border: 1rem solid red; */
+  /* justify-content: flex-end; */
+  width: 100%;
+  /* gap: 20px 30px; */
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.neumorphic {
+  background: #e6e7ee;
+  border-radius: 10px;
+  box-shadow: 9px 9px 16px #b8b9be, -9px -9px 16px #fff;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.datetime {
+  align-self: flex-end;
+  align-content: flex-end;
+}
+
+.time {
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+div#time2 {
+  width: 300px;
+}
+
+/* Align button at bottom of midcontainer */
+div#pause-container {
+  align-self: flex-end;
+}
+
+.button {
+  color: #00084d;
+  background: #e5f2fc;
+  border-radius: 10px;
+  box-shadow: 9px 9px 16px #b8b9be, -9px -9px 16px #fff;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+
+.button:hover {
+  color: #1d63ed;
+}
+
+.button:focus {
+  outline: 1px solid #1d63ed;
+}
+
+.button:active {
+  color: #00084d;
+  background-color: #cfe7fa;
+  box-shadow: -9px -9px 16px #b8b9be, 9px 9px 16px #fff;
+}
+
+.pauseActive {
+  color: #104dc5;
+  text-shadow: -1px -1px 1px #fff, 1px -1px 3px #092e76, -1px 1px 1px #fff, 1px 1px 1px #092e76;
+  background-color: #dceefb;
+  box-shadow: -7px -7px 100px #fff, 1px 1px 10px 3px #b8b9be;
+}
+
+.neumorphic-container {
+  display: flex;
+  background: #e6e7ee;
+  border-radius: 10px;
+  box-shadow: 9px 9px 16px #b8b9be, -9px -9px 16px #fff;
+  padding: 20px;
+  justify-content: center;
+}
+
+div#termcontainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  /* width: 100; */
+  /* flex-wrap: wrap; */
+  align-content: center;
+  align-self: center;
+  /* DEBUG */
+  /* border: 1rem solid blue; */
+  height: 420px;
+}
+
+.myterminal {
+  /* display: flex; */
+  /* gap: 20px; */
+  /* justify-content: center; */
+  color: #fff;
+  background-color: #17191e;
+  /* DEBUG */
+  /* border: 1rem solid green; */
+  width: 100%;
+  padding-top: 3px;
+  padding-left: 3px;
+}
+/* 
+.xterm-helpers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border: 1rem solid magenta;
+} */
+/* .xterm-helper-textarea {
+  width: 100%;
+  background: #17191e;
+  border: none;
+} */
