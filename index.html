@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker OCI Timestamp Annotation Example</title>
+<!--
+    /*
+          "xterm-old": "https://unpkg.com/@liudonghua123/xterm@5.5.0/lib/xterm-esm.js",
+          "@yarnpkg/broken-lockfile": "https://esm.sh/@yarnpkg/lockfile@1.1.0/?dev",
+    */
+-->
+    <script type="importmap">
+    {
+        "imports": {
+          "xterm": "https://esm.sh/@xterm/xterm@5.5.0",
+          "moment": "https://esm.sh/moment@2.30.1/?dev",
+          "handlebars": "https://esm.sh/handlebars@4.7.8/?dev"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/@xterm/xterm@5.5.0/css/xterm.css" />
+    <!-- OLD xterm -->
+<!--     <link rel="stylesheet" href="https://unpkg.com/@liudonghua123/xterm@5.5.0/css/xterm.css" /> -->
+
+    <style>
+    </style>
+  </head>
+
+  <body>
+    <div class="topcontainer">
+      <div class="container midcontainer">
+        <div id="time1" class="neumorphic time">
+          <p>
+            Nonstandard Time Format
+          </p>
+          <p id="datetime1" class="datetime">
+          </p>
+        </div>
+        <div id="pause-container" class="container">
+          <div id="pause-button" class="neumorphic button">
+            <p>
+              Pause
+            </p>
+          </div>
+        </div>
+        <div id="time2" class="neumorphic time">
+          <p>
+            RFC 3339 + ISO 8601ISO 8601-1:2019
+          </p>
+          <p id="datetime2" class="datetime">
+          </p>
+        </div>
+      </div>
+      <div id="termcontainer" class="midcontainer neumorphic-container">
+        <div id="xterm1" class="myterminal">
+<!--           <p>
+            Hello term
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
+
