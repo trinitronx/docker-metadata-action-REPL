@@ -44,7 +44,7 @@ body {
   background: #e6e7ee;
   border-radius: 10px;
   box-shadow: 9px 9px 16px #b8b9be, -9px -9px 16px #fff;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
   width: 200px;
   /* height: 100px; Caused overflow! */
@@ -62,6 +62,7 @@ body {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+  height: 5rem;
 }
 
 div#time2 {
@@ -78,7 +79,7 @@ div#pause-container {
   background: #e5f2fc;
   border-radius: 10px;
   box-shadow: 9px 9px 16px #b8b9be, -9px -9px 16px #fff;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
   width: 200px;
   height: 100px;
