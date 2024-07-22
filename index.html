@@ -34,16 +34,17 @@
     <div class="topcontainer">
       <div class="container midcontainer">
         <svg class="logo" viewBox="0 0 610 145" preserveAspectRatio="xMidYMid meet">
-          <image x="25%" y="25%" xlink:href="./img/Docker_(container_engine)_logo.svg">
-          </image>
-          <!-- <circle class="eye" cx="48" cy="52.5" r="2.3" stroke="#d4ffde"
-            stroke-width="1" fill="#d4ffde" />
-          <circle class="pupil" cx="48" cy="52.5" r="1" stroke="#394d54"
-            stroke-width="1" fill="#394d54" /> -->
-          <circle class="eye" cx="48" cy="52.5" r="20" stroke="#d4ffde"
-            stroke-width="1" fill="#d4ffde" />
-          <circle class="pupil" cx="48" cy="52.5" r="10" stroke="#394d54"
-            stroke-width="1" fill="#394d54" />
+          <use xlink:href="./img/Docker_(container_engine)_logo.svg#docker_logo" />
+          <!-- Nested SVG so transform-origin rotates w.r.t. this element's viewBox.
+            Aligned left via xMin
+          -->
+          <svg id="eyelook_svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="xMinYMid meet"
+            x="50" y="50" >
+            <circle class="eye" cx="50" cy="50" r="20" stroke="#d4edf1"
+              stroke-width="1" fill="#d4edf1" />
+            <circle class="pupil" cx="40" cy="50" r="10" stroke="#394d54"
+              stroke-width="1" fill="#394d54" />
+          </svg>
         </svg>
       </div>
       <div class="container midcontainer">
