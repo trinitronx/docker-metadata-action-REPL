@@ -9,15 +9,16 @@ body {
 }
 
 .topcontainer {
+  /* Force this to top left so it takes up full width & height */
+  top: 0px;
+  left: 0px;
+  position: absolute;
+
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   align-content: space-between;
   height: 100vh;
-  /* height: 100%; */
-  width: 95vw;
-  /* align-content: center; */
-  /* justify-content: space-between; */
+  width: 100vw;
   /* DEBUG */
   /* border: 1rem solid magenta; */
 }
@@ -29,7 +30,7 @@ body {
   /* DEBUG */
   /* border: 1rem solid red; */
   /* justify-content: flex-end; */
-  width: 100%;
+  /* width: 100%; */
   /* gap: 20px 30px; */
 }
 
@@ -46,7 +47,7 @@ body {
   padding: 20px;
   text-align: center;
   width: 200px;
-  height: 100px;
+  /* height: 100px; Caused overflow! */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +126,6 @@ div#termcontainer {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
-  /* width: 100; */
   /* flex-wrap: wrap; */
   align-content: center;
   align-self: center;
@@ -142,7 +142,7 @@ div#termcontainer {
   background-color: #17191e;
   /* DEBUG */
   /* border: 1rem solid green; */
-  width: 100%;
+  width: 90vw;
   padding-top: 3px;
   padding-left: 3px;
 }
