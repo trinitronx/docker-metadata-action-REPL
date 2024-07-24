@@ -114,22 +114,36 @@ terminal.onKey((key) => {
     // Backspace
     // Don't delete the prompt
     // TODO: Fix buffer cursor so it starts after PS1
-    console.log("xterm.js buffer x: " + terminal._core.buffer.x);
-    console.log("xterm.js buffer y: " + terminal._core.buffer.y);
+    console.log("Before PS1 check xterm.js buffer x: " + terminal._core.buffer.x);
+    console.log("Before PS1 check xterm.js buffer y: " + terminal._core.buffer.y);
     console.log("PS1 length: " + promptLength(PS1));
     if (terminal._core.buffer.y > 0 || terminal._core.buffer.x > promptLength(PS1)) {
       // Always write the backspace sequence **before** forcibly moving the
       // (x, y) buffer location
       // Otherwise, it leaves blinking cursors on the left side,
       // and fails to delete the last char on the righthand side
-      // of each line
+      // of each line... which it still does for some reason
       terminal.write('\b \b');
       // TODO: Implement xterm-readline instead of this hack
       if (terminal._core.buffer.x === 0 && terminal._core.buffer.y > 0)       {
         // Reinventing the square wheel... we'll call it 'rheedlyne'
         // It's like the Kroger brand version of readline, I guess...
+        // Move cursor back to the end of previous line, then erase the last
+        // char by overwriting it with a space, then move cursor back to the end
+        // of previous line again
+        console.log("Previous line wrap back");
         terminal._core.buffer.y--;
+        let prev_line = terminal._core.buffer.y;
         terminal._core.buffer.x = terminal.cols;
+        console.log("After line wrap back xterm.js buffer x: " + terminal._core.buffer.x);
+        console.log("After line wrap back xterm.js buffer y: " + terminal._core.buffer.y);
+        terminal.write(' \b');
+        console.log("After write space backspace xterm.js buffer x: " + terminal._core.buffer.x);
+        console.log("After write space backspace xterm.js buffer y: " + terminal._core.buffer.y);
+        terminal._core.buffer.y = prev_line; // Go back to where we were (else we could end up at -1)
+        terminal._core.buffer.x = terminal.cols;
+        console.log("After reset to end prev line xterm.js buffer x: " + terminal._core.buffer.x);
+        console.log("After reset to end prev line xterm.js buffer y: " + terminal._core.buffer.y);
         /* console.log(terminal._core); */
       }
       if (curr_line) {
@@ -137,8 +151,12 @@ terminal.onKey((key) => {
       }
     }
   } else if (printable) {
+    console.log("Before terminal.write xterm.js buffer x: " + terminal._core.buffer.x);
+    console.log("Before terminal.write xterm.js buffer y: " + terminal._core.buffer.y);
     curr_line += key.key;
     terminal.write(key.key);
+    console.log("After terminal.write xterm.js buffer x: " + terminal._core.buffer.x);
+    console.log("After terminal.write xterm.js buffer y: " + terminal._core.buffer.y);
   }
 });
 

@@ -1,3 +1,8 @@
+/* TODO: Fix so no scroll overflow! This is to find elements overflowing */
+/* * {
+  overflow: scroll;
+} */
+
 body {
   background-color: #e6e7ee;
   display: flex;
