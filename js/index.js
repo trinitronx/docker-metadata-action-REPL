@@ -4,8 +4,8 @@ import {
   Terminal
 } from 'xterm';
 
-import moment from 'moment';
 import * as handlebarsESMshImport from 'handlebars';
+import moment from 'moment';
 const handlebars = handlebarsESMshImport.default;
 
 function showTimes() {
